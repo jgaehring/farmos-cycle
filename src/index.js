@@ -5,7 +5,8 @@ import {App} from './app'
 const main = App
 
 const drivers = {
-  DOM: makeDOMDriver('#root')
+  DOM: makeDOMDriver('#root'),
+  log: msg$ => { msg$.addListener({next: msg => console.log(msg)})}
 }
 
 run(main, drivers)

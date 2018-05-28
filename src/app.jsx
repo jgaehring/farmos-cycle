@@ -32,7 +32,9 @@ export function App (sources) {
   const vtree$ = view(state$);
   
   const sinks = {
-    DOM: vtree$
-  }
+    DOM: vtree$,
+    log: input$.map(val => val)
+  };
+  
   return sinks;
 }
