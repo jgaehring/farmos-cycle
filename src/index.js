@@ -10,7 +10,7 @@ const drivers = {
   IDB: makeIdbDriver('farm-db', 1, upgrade => {
       upgrade.createObjectStore('logs', {keyPath: 'id'})
   }),
-  log: msg$ => { msg$.addListener({next: msg => console.log(msg)})}
+  logger: msg$ => { msg$.addListener({next: msg => console.log(msg)})}
 }
 
 run(main, drivers)
